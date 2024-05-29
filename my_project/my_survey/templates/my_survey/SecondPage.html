@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% block content %}
+    <form method="post">
+        <label for="id_choice_2">2ページ目の質問:</label>
+        <select name="choice_2" id="id_choice_2">
+            {% for choice in choice_2_choices %}
+                <option value="{{ choice }}">{{ choice }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
