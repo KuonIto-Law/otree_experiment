@@ -10,7 +10,6 @@ class FirstPage(Page):
     # この場合"player"がモデルに保存されている
     form_model = 'player'
     form_fields = ['choice_1']
-    
     template_name = 'my_survey/FirstPage.html'
 
 class SecondPage(Page):
@@ -28,16 +27,16 @@ class SecondPage(Page):
         # これにより、そのプレイヤーのデータにアクセスし、操作することができる
         choice_1 = self.player.choice_1
         if choice_1 == 'A':
-            self.form_fields[0].choices = ['1', '2']
+            self.player.choice_2 = '1,2'
         elif choice_1 == 'B':
-            self.form_fields[0].choices = ['3', '4']
+            self.player.choice_2 = '3,4'
         elif choice_1 == 'C':
-            self.form_fields[0].choices = ['5', '6']
+            self.player.choice_2 = '5,6'
         elif choice_1 == 'D':
-            self.form_fields[0].choices = ['7', '8']
+            self.player.choice_2 = '7,8'
         elif choice_1 == 'E':
-            self.form_fields[0].choices = ['9', '10']
-        return form_fields
+            self.player.choice_2 = '9,10'
+        return ["choice_2"]
 
     # テンプレートへの変数の渡し方
     # テンプレートへ変数を渡すためには、このメソッドを使用する
