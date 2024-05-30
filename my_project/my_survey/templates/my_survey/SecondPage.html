@@ -1,0 +1,12 @@
+{% extends "global/Page.html" %}
+{% block content %}
+    <form method="post">
+        <label for="candidates">候補者</label>
+        <select name="candidates">
+            {% for candidate in filtered_candidates %}
+                <option value="{{ candidate }}">{{ candidate }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Next">
+    </form>
+{% endblock %}
