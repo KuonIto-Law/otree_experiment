@@ -1,0 +1,8 @@
+{% extends "global/Page.html" %}
+{% block content %}
+    <form method="post">
+        {{ formfield player.prep_federal_state }}
+        {{ formfield player.prep_polling_place }}
+        <input type="submit" value="Next">
+    </form>
+{% endblock %}
